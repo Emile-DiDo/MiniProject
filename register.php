@@ -1,6 +1,11 @@
 <?php
-require_once "databas.php";
+require_once "database.php";
 $error = "";
+$error1 = "";
+$error2 = "";
+$error3 = "";
+$error4 = "";
+$error5 = "";
 $email = "";
 $pass = "";
 $passCheck = "";
@@ -22,16 +27,23 @@ if ($conn) {
         $hashedpass = password_hash($pass, PASSWORD_DEFAULT);
         $email = strip_tags(trim($_POST["email"]));
         $fname = strip_tags(trim($_POST["firstName"]));
-        $lname = strip_tags(trim($_POST["lastName"]));
+        $lname = trim($_POST["lastName"]);
 
+
+        if ($fname == "") {
+            $foundf = true;
+        }
+        if ($lname == "") {
+            $foundl = true;
+        }
+        if ($pass == "") {
+            $foundp = true;
+        }
+        if ($pass != $passCheck) {
+            $foundcheck = true;
+        }
         if ($email == "") {
             $founde = true;
-        } elseif ($fname == "") {
-            $foundf = true;
-        } elseif ($lname == "") {
-            $foundl = true;
-        } elseif ($pass == "") {
-            $foundp = true;
         } else {
             while ($db_records = mysqli_fetch_assoc($results)) {
                 if ($email == $db_records["email"]) {
@@ -40,21 +52,24 @@ if ($conn) {
             }
         }
         if ($foundf) {
-            $error = "Please insert your Firstname.";
+            $error1 = "Please insert your Firstname.";
         }
         if ($foundl) {
-            $error = "Please insert your Lastname.";
+            $error2 = "Please insert your Lastname.";
         }
         if ($founde) {
-            $error = "Please insert a Email.";
+            $error3 = "Please insert a Email.";
         } else if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Please insert a valid Email.";
+            $error3 = "Please insert a valid Email.";
         }
         if ($foundp) {
-            $error = "Please insert your Password.";
+            $error4 = "Please insert your Password.";
         }
-        if (!$found) {
-            $query2 = "INSERT INTO users (firstName, lastName, email, password) VALUES ( '" . $name . "','" .  $email . "', '" .  $hashedpass .  "')";
+        if ($foundcheck) {
+            $error5 = "Both Passwords are not the same.";
+        }
+        if (!$found && !$foundf  && !$foundl && !$founde && !$foundp && !$foundcheck) {
+            $query2 = "INSERT INTO users (firstName, lastName, email, password) VALUES ( '" . $fname . "','" . $lname . "','" .  $email . "', '" .  $hashedpass .  "')";
             $results = mysqli_query($conn, $query2);
             header("Location: login.php");
         } else {
@@ -84,15 +99,20 @@ if ($conn) {
     <h1>REGISTER NEW ACCOUNT</h1>
     <h2 class="alert"><?= $error ?></h2>
     <form action="" method="post">
-        <input type="text" name="firstName" value="<?= $fname ?>" placeholder="Please insert your Firstname">
+        <input type="text" name="firstName" value="<?= $fname ?>" placeholder="Firstname">
+        <p><?= $error1 ?></p>
         <br>
-        <input type="text" name="lastName" value="<?= $lname ?>" placeholder="Please insert your Firstname">
+        <input type="text" name="lastName" value="<?= $lname ?>" placeholder="Lastname">
+        <p><?= $error2 ?></p>
         <br>
-        <input type="email" name="email" value="<?= $email ?>" placeholder="Please insert your Firstname">
+        <input type="email" name="email" value="<?= $email ?>" placeholder="E-Mail Address">
+        <p><?= $error3 ?></p>
         <br>
-        <input type="password" name="pass" value="<?= $pass ?>" placeholder="Please insert your Firstname">
+        <input type="password" name="pass" value="<?= $pass ?>" placeholder="Password">
+        <p><?= $error4 ?></p>
         <br>
-        <input type="password" name="passCheck" value="<?= $passCheck ?>" placeholder="Please insert your Firstname">
+        <input type="password" name="passCheck" value="<?= $passCheck ?>" placeholder="Repeat Password">
+        <p><?= $error5 ?></p>
         <br>
         <input type="submit" name="login" value="REGISTER">
     </form>
