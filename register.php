@@ -14,6 +14,7 @@ $lname = "";
 $found = false;
 $founde = false;
 $foundp = false;
+$foundpl = false;
 $foundf = false;
 $foundl = false;
 $foundcheck = false;
@@ -38,6 +39,9 @@ if ($conn) {
         }
         if ($pass == "") {
             $foundp = true;
+        }
+        if (strlen($pass) < 8) {
+            $foundpl = true;
         }
         if ($pass != $passCheck) {
             $foundcheck = true;
@@ -64,6 +68,9 @@ if ($conn) {
         }
         if ($foundp) {
             $error4 = "Please insert your Password.";
+        }
+        if ($foundpl) {
+            $error4 = "Password in not long enough.";
         }
         if ($foundcheck) {
             $error5 = "Both Passwords are not the same.";
