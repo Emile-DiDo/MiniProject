@@ -1,5 +1,6 @@
 <?php
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,19 +31,6 @@
         <hr>
         <hr>
     </nav>
-    <section>
-        <article>
-            <h1> TIME PASS</h1>
-
-            <p> TimePass Inc. is an NumericAll technology and media services provider and production company headquartered in Luxembourg.
-                TimePass was founded in 2020 by Emile and Sridevi. The company's primary business is its
-                subscription-based streaming service which offers online streaming of a library of films and television series, including those produced in-house. As of April 2020, Netflix had over 193 million paid subscriptions worldwide, including 73 million in the United States. It is available worldwide except in the following: mainland China, Syria, North Korea, and Crimea. The company also has offices in France, the United Kingdom, Brazil, the Netherlands, India, Japan, and South Korea.
-                TimePass is a member of the Motion Picture Association. Today, the company produces and distributes content from countries all over the globe.</p>
-        </article>
-        <article>
-            <input type="text" name="search" value="SEARCH">
-        </article>
-    </section>
 
 </body>
 
