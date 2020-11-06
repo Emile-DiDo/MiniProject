@@ -43,7 +43,7 @@ if ($conn) {
             $results = mysqli_query($conn, $query);
             $db_records = mysqli_fetch_assoc($results);
             $_SESSION["id"] = $db_records["id"];
-            $_SESSION["username"] = $db_records["username"];
+            $_SESSION["username"] = $db_records["firstName"] . " " . $db_records["lastName"];
             header("Location: account.php");
         }
     }
