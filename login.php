@@ -1,5 +1,5 @@
 <?php
-require_once "databas.php";
+require_once "database.php";
 session_start();
 $error = "";
 $email = "";
