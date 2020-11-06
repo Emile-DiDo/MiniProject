@@ -63,6 +63,14 @@ if ($conn) {
         .alert {
             color: red;
         }
+
+        body {
+            background-image: url(images/bg.jpg);
+        }
+
+        input {
+            width: 2000px;
+        }
     </style>
 </head>
 
