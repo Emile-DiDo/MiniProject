@@ -37,5 +37,11 @@ h1 {
 }
 p {
   font-family: "Courier New", Courier, monospace;
-  line-break: ;
+}
+.size {
+  width: 1000px;
+  height: 100px;
+  margin-top: 70px;
+  margin-left: 400px;
+  background-color: wheat;
 }
