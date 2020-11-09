@@ -89,6 +89,10 @@ img {
   display: block;
   width: 120px;
 }
+#addmovie {
+  background-color: burlywood;
+  border-radius: 10%;
+}
 
 /*#cat {
 
