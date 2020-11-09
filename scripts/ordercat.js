@@ -20,10 +20,10 @@ $(function () {
                 $('#clone').append('<div class="two" id="two">')
                 $('#clone').append('<div class="three" id=three>')
                 $('#one').append('<img src="' + movie.poster + '" alt="" srcset="">');
-                $('#two').append('<h2>#' + movie.id +"<a href='" + movie.id + "'>" + movie.title + '</a></h2>');
+                $('#two').append('<h2>#' + movie.id +"<a href='details.php?id=" + movie.id + "'>" + movie.title + '</a></h2>');
                 $('#two').append('<p>  ' + movie.descriptionCut + ' ...</p>');
-                $('#three').append('<p><a href="' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
-                $('#three').append('<p><a href="<?php header("Location: main.php?id='+ +'");?>' + movie.description + '" alt="" srcset="">See Details</a></p>');
+                $('#three').append('<p><a href="modify.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
+                $('#three').append('<p><a href="details.php?id='+ movie.id +'" alt="" srcset="">See Details</a></p>');
                 $('#one').removeAttr("id");
                 $('#two').removeAttr("id");
                 $('#three').removeAttr("id");
@@ -55,10 +55,10 @@ $(function () {
                 $('#clone').append('<div class="two" id="two">')
                 $('#clone').append('<div class="three" id=three>')
                 $('#one').append('<img src="' + movie.poster + '" alt="" srcset="">');
-                $('#two').append('<h2>#' + movie.id +"<a href='" + movie.id + "'>" + movie.title + '</a></h2>');
+                $('#two').append('<h2>#' + movie.id +"<a href='details.php?id=" + movie.id + "'>" + movie.title + '</a></h2>');
                 $('#two').append('<p>  ' + movie.descriptionCut + ' ...</p>');
-                $('#three').append('<p><a href="' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
-                $('#three').append('<p><a href="<?php header("Location: main.php?id='+ +'");?>' + movie.description + '" alt="" srcset="">See Details</a></p>');
+                $('#three').append('<p><a href="modify.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
+                $('#three').append('<p><a href="details.php?id='+ movie.id + '" alt="" srcset="">See Details</a></p>');
                 $('#one').removeAttr("id");
                 $('#two').removeAttr("id");
                 $('#three').removeAttr("id");
