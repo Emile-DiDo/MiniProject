@@ -4,7 +4,12 @@
 body {
   background-color: black;
   color: white;
-  background-image: url("images/bg.jpg");
+  font-family: "Lobster", cursive;
+  /*background-image: url("../images/bg.jpg");*/
+}
+main {
+  width: 80%;
+  margin: auto;
 }
 
 .not_visible {
@@ -36,12 +41,32 @@ h1 {
   font-weight: 500px;
 }
 p {
-  font-family: "Courier New", Courier, monospace;
+  font-size: large;
 }
 .size {
   width: 1000px;
   height: 100px;
   margin-top: 70px;
-  margin-left: 400px;
+  margin-left: 150px;
   background-color: wheat;
+}
+img {
+  width: 250px;
+}
+#result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: blanchedalmond 2px solid;
+}
+.movie {
+  width: 270px;
+  margin: 10px;
+  border: wheat 2px solid;
+  text-align: center;
+  padding-top: 10px;
+}
+#cat {
+  display: flex;
+  justify-content: space-evenly;
 }
