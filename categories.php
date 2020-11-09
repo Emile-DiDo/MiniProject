@@ -13,22 +13,23 @@ require_once "nav.php";
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/categories.css">
 </head>
-<header>
-    <form action="" method="post">
-        <select name="categories" id="cat">
-            <option value="%">All Categories</option>
-        </select>
-        <input type="submit" value="Search with specifications">
-        <select name="" id="">
-            <option value="ASC"> Order by Ascending</option>
-            <option value="DESC">Order by Descending</option>
-        </select>
-    </form>
-
-</header>
 
 <body>
+    <header>
+        <form action="" method="post">
+            <select name="categories" id="cat">
+                <option value="%">All Categories</option>
+            </select>
+            <input type="submit" value="Search with specifications">
+            <select name="" id="">
+                <option value="ASC"> Order by Ascending</option>
+                <option value="DESC">Order by Descending</option>
+            </select>
+        </form>
 
+    </header>
+
+    <script src="scripts/ordercat.js"></script>
 </body>
 
 </html>
