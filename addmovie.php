@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET["id"])) {
+    echo "good";
+} else {
+    echo "bad";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
