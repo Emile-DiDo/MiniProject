@@ -15,20 +15,19 @@ $(function () {
             console.log(movies);
             $("#ordered").html("");
             $.each(movies, function(key, movie) {
-                $('#ordered').append('<div class="clone">')
-                $('.clone').append('<div class="one" id="one">')
-                $('.clone').append('<div class="two" id="two">')
-                $('.clone').append('<div class="three" id=three>')
+                $('#ordered').append('<div id="clone" class="clone">')
+                $('#clone').append('<div class="one" id="one">')
+                $('#clone').append('<div class="two" id="two">')
+                $('#clone').append('<div class="three" id=three>')
                 $('#one').append('<img src="' + movie.poster + '" alt="" srcset="">');
                 $('#two').append('<h2>#' + movie.id +"<a href='" + movie.id + "'>" + movie.title + '</a></h2>');
                 $('#two').append('<p>  ' + movie.descriptionCut + ' ...</p>');
-                $('#three').append('<a href="' + movie.id + '" alt="" srcset="">Modify Movie</a>');
-                $('#three').append('<a href="<?php header("Location: main.php?id='+ +'");?>' + movie.description + '" alt="" srcset="">See Details</a>');
+                $('#three').append('<p><a href="' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
+                $('#three').append('<p><a href="<?php header("Location: main.php?id='+ +'");?>' + movie.description + '" alt="" srcset="">See Details</a></p>');
                 $('#one').removeAttr("id");
                 $('#two').removeAttr("id");
                 $('#three').removeAttr("id");
-                $('.clone').removeClass("clone");
-                  
+                $('#clone').removeAttr("id");
                 console.log('SUCCESS : ' + result);
             });
         }).fail(function (result) {
