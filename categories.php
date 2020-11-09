@@ -1,6 +1,11 @@
 <?php
+session_start();
 require_once "nav.php";
-
+if (isset($_SESSION["username"])) {
+    echo "Hello " . $_SESSION["username"];
+} else {
+    echo "bad";
+}
 
 
 ?>
