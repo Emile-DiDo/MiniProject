@@ -27,10 +27,15 @@ require_once("nav.php");
                     TimePass is a member of the Motion Picture Association. Today, the company produces and distributes content from countries all over the globe.</p>
             </article>
             <article id='list'>
-                <input type="text" name="search" id='search' value="SEARCH" class="size">
+                <input type="text" name="search" id='search' placeholder="SEARCH FOR A MOVIE HERE" class="size">
             </article>
             <div id='result'></div>
-            <div id="cat"></div>
+
+            <div id='result1'></div>
+
+            <div id='result2'></div>
+
+
         </section>
     </main>
 
@@ -44,7 +49,7 @@ require_once("nav.php");
                 // e.preventDefault();
 
                 $.ajax({
-                    url: 'movielist.php',
+                    url: 'search.php',
                     method: 'post',
                     data: {
                         moviename: $('#search').val() // can be used as $(this)
@@ -66,12 +71,26 @@ require_once("nav.php");
                 url: 'categorylist.php',
                 method: 'post'
 
-            }).done(function(result) {
+            }).done(function(result1) {
                 // If ajax call worked
-                console.log('SUCCESS : ' + result);
-                $('#cat').append(result);
-                //$('#result').append(result);
-            }).fail(function(result) {
+                console.log('SUCCESS : ' + result1);
+                $('#result1').append(result1);
+
+            }).fail(function(result1) {
+                // If AJAX failed
+                console.log('AJAX ERROR');
+            });
+
+            $.ajax({
+                url: 'movielist.php',
+                method: 'post'
+
+            }).done(function(result2) {
+                // If ajax call worked
+                console.log('SUCCESS : ' + result1);
+                $('#result2').append(result2);
+
+            }).fail(function(result2) {
                 // If AJAX failed
                 console.log('AJAX ERROR');
             });
