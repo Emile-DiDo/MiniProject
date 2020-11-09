@@ -3,7 +3,7 @@
 }
 body {
   background-color: black;
-  color: white;
+  color: wheat;
   font-family: "Lobster", cursive;
   /*background-image: url("../images/bg.jpg");*/
 }
@@ -43,21 +43,26 @@ h1 {
 p {
   font-size: large;
 }
+input::-webkit-input-placeholder {
+  font-size: 50px;
+}
 .size {
   width: 1000px;
   height: 100px;
   margin-top: 70px;
   margin-left: 150px;
   background-color: wheat;
+  margin-bottom: 30px;
 }
 img {
   width: 250px;
 }
 #result {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: auto;
   border: blanchedalmond 2px solid;
+  margin-bottom: 30px;
 }
 .movie {
   width: 270px;
@@ -66,7 +71,27 @@ img {
   text-align: center;
   padding-top: 10px;
 }
-#cat {
+#result1 {
+  height: 50px;
+  margin-bottom: 30px;
+  color: blue;
+  font-size: larger;
+}
+#result1,
+#result2 {
   display: flex;
   justify-content: space-evenly;
 }
+.movie1 img {
+  width: 100px;
+}
+#lastmovie {
+  display: block;
+  width: 120px;
+}
+
+/*#cat {
+
+  display: flex;
+  justify-content: space-evenly;
+}*/
