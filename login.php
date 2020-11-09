@@ -29,7 +29,7 @@ if ($conn) {
 
 
         if (!$founde) {
-            $error = "WRONG EMAILS";
+            $error = "WRONG EMAIL";
         } else if (!$foundp) {
             $error = "WRONG PASSWORD";
         } else if (!$foundb) {
