@@ -8,6 +8,15 @@ if (isset($_POST['logout'])) {
 
 
 
+$admin = $_SESSION['admin'];
+if (isset($_POST['addmovie'])) {
+
+    header("Location: addmovie.php");
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +36,14 @@ if (isset($_POST['logout'])) {
                 <a href="#home.php" class="box">HOME </a>
                 <a href="categories.php" class="box">CATEGORIES </a>
                 <!--<a href="insert.php" class='not_visible'>ADD_MOVIES </a> -->
-                <button class="disable">ADD MOVIES</button>
+                <form action="" method="post">
+                    <input type="submit" name='addmovie' value='ADD MOVIES'> <?php
+
+                                                                                if (!$admin) {
+                                                                                    echo 'disabled =disabled';
+                                                                                }  ?>
+                </form>
+
             </li>
             <li>
                 <!-- <a href="" class="box">Login</a>
@@ -42,7 +58,34 @@ if (isset($_POST['logout'])) {
         <hr>
         <hr>
     </nav>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+    </script>
+    <script>
+        // Wait for the dom to be loaded/ready before executing javascript
+        $(function() {
 
+            $('#addmovie').click(function(e) {
+                // e.preventDefault();
+                header("location : addmovie.php");
+
+                /* $.ajax({
+                     url: 'addmovie.php',
+                     method: 'post'
+
+                 }).done(function(result) {
+                     // If ajax call worked
+                     console.log('SUCCESS : ' + result);
+                     header("location")
+                     //$('#result').html(result);
+                     //$('#result').append(result);
+                 }).fail(function(result) {
+                     // If AJAX failed
+                     console.log('AJAX ERROR');
+                 }); */
+            });
+        });
+    </script> -->
 </body>
+
 
 </html>
