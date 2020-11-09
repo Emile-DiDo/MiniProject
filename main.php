@@ -30,7 +30,7 @@ require_once("nav.php");
                 <input type="text" name="search" id='search' value="SEARCH" class="size">
             </article>
             <div id='result'></div>
-
+            <div id="cat"></div>
         </section>
     </main>
 
@@ -60,6 +60,22 @@ require_once("nav.php");
                     console.log('AJAX ERROR');
                 });
             });
+
+
+            $.ajax({
+                url: 'categorylist.php',
+                method: 'post'
+
+            }).done(function(result) {
+                // If ajax call worked
+                console.log('SUCCESS : ' + result);
+                $('#cat').append(result);
+                //$('#result').append(result);
+            }).fail(function(result) {
+                // If AJAX failed
+                console.log('AJAX ERROR');
+            });
+
 
         });
     </script>
