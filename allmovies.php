@@ -1,5 +1,5 @@
 <?php
-require_once "databas.php";
+require_once "database.php";
 $query = "SELECT * FROM movies";
 $result = mysqli_query($conn, $query);
 $movies = mysqli_fetch_all($result, MYSQLI_ASSOC);
