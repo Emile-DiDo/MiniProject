@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (isset($_POST['logout'])) {
+    // session_unset();
+    unset($_SESSION);
+    header("Location: login.php");
+}
+
 
 
 ?>
@@ -15,15 +22,19 @@
 <body>
     <nav>
         <ul>
+
             <li>
                 <a href="#home.php" class="box">HOME </a>
-                <a href="#category.php" class="box">CATEGORIES </a>
-                <a href="insert.php" class='not_visible'>ADD_MOVIES </a>
+                <a href="categories.php" class="box">CATEGORIES </a>
+                <!--<a href="insert.php" class='not_visible'>ADD_MOVIES </a> -->
+                <button class="disable">ADD MOVIES</button>
             </li>
             <li>
-                <a href="" class="box">Login</a>
-                <a href="" class="box">Register</a>
-                <a href="" class='not_visible'>Logout</a>
+                <!-- <a href="" class="box">Login</a>
+                <a href="" class="box">Register</a>  -->
+                <form action="" method='POST'>
+                    <input type="submit" value="LOGOUT" name='logout'>
+                </form>
 
             </li>
 
