@@ -2,12 +2,14 @@ $(function () {
             
     $('#ordercat').click(function (e) {
         e.preventDefault();
+        console.log();
         $.ajax({
             url: 'ordercat.php',
             method: 'get',
             data:{
                 cat: $("#cat").val(),
                 sort:$("#sort").val(),
+                limit:$("#limit").html()
             },
             dataType: 'json'
         }).done(function(result) {
@@ -22,7 +24,7 @@ $(function () {
                 $('#one').append('<img src="' + movie.poster + '" alt="" srcset="">');
                 $('#two').append('<h2>#' + movie.id +"<a href='details.php?id=" + movie.id + "'>" + movie.title + '</a></h2>');
                 $('#two').append('<p>  ' + movie.descriptionCut + ' ...</p>');
-                $('#three').append('<p><a href="addmovie.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
+                $('#three').append('<p><a href="modifymovie.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
                 $('#three').append('<p><a href="details.php?id='+ movie.id +'" alt="" srcset="">See Details</a></p>');
                 $('#one').removeAttr("id");
                 $('#two').removeAttr("id");
@@ -31,7 +33,7 @@ $(function () {
                 console.log('SUCCESS : ' + result);
             });
         }).fail(function (result) {
-            console.log('AJAX ERROR:' + result);
+            console.log('AJAX ERRORS:' + result);
             $('#movies').html(result);
         });
     });
@@ -43,7 +45,12 @@ $(function () {
         $.ajax({
             url: 'allmovies.php',
             method: 'get',
-            dataType: 'json'
+            dataType: 'json',
+            data:{
+                cat: $("#cat").val(),
+                sort:$("#sort").val(),
+                limit:$("#limit").html()
+            },
 
         }).done(function(result) {
             let movies = result;
@@ -67,7 +74,7 @@ $(function () {
             });
 
         }).fail(function (result) {
-            console.log('AJAX ERROR:' + result);
+            console.log('AJAX ERROR2:' + result);
             $('#ordered').html(result);
         });
     });
