@@ -23,11 +23,7 @@ if ($_POST["id"] > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        p {
-            color: wheat;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/modcat.css">
 </head>
 
 <body>
@@ -40,11 +36,11 @@ if ($_POST["id"] > 0) {
 
             <input type="submit" id="choose" name="choose" value="Submit">
         </form>
-        <form id="app" method="post">
-
-        </form>
-        <div class="text"></div>
     </header>
+    <form id="app" method="post">
+
+    </form>
+    <div class="text"></div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="scripts/modifycat.js"></script>
 </body>
