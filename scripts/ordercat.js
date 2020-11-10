@@ -64,7 +64,7 @@ $(function () {
                 $('#one').append('<img src="' + movie.poster + '" alt="" srcset="">');
                 $('#two').append('<h2>#' + movie.id +"<a href='details.php?id=" + movie.id + "'>" + movie.title + '</a></h2>');
                 $('#two').append('<p>  ' + movie.descriptionCut + ' ...</p>');
-                $('#three').append('<p><a href="addmovie.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
+                $('#three').append('<p><a href="modifymovie.php?id=' + movie.id + '" alt="" srcset="">Modify Movie</a></p>');
                 $('#three').append('<p><a href="details.php?id='+ movie.id + '" alt="" srcset="">See Details</a></p>');
                 $('#one').removeAttr("id");
                 $('#two').removeAttr("id");
