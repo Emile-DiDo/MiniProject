@@ -43,9 +43,7 @@ h1 {
 p {
   font-size: large;
 }
-input::-webkit-input-placeholder {
-  font-size: 50px;
-}
+
 .size {
   width: 1000px;
   height: 100px;
