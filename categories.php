@@ -37,15 +37,24 @@ if (isset($_SESSION["username"])) {
         </div>
         <footer>
             <?php
+            require_once "database.php";
+            $query = "SELECT count(id) as test FROM movies";
+            $result = mysqli_query($conn, $query);
             $pageup = intval($_GET["page"] + 1);
             $pagedown = intval($_GET["page"]) - 1;
+            $array = mysqli_fetch_assoc($result);
+
             if ($_GET["page"] == 1) {
-                echo '<p id="limit" value="' . $_GET["page"] . '">Page' . $_GET["page"] . '</p>';
+                echo '<p id="limit" >' . $_GET["page"] . '</p>';
                 echo '<a href="categories.php?page=' . $pageup  . '">NEXT</a>';
+                echo "<br>";
+            } else if ($_GET["page"] >= $array["test"] / 2) {
+                echo '<a href="categories.php?page=' . $pagedown  . '">Previous</a>';
+                echo '<p id="limit" >' . $_GET["page"] . '</p>';
                 echo "<br>";
             } else {
                 echo '<a href="categories.php?page=' .  $pagedown . '">Previous</a>';
-                echo '<p id="limit" value="' . $_GET["page"] . '">Page' . $_GET["page"] . '</p>';
+                echo '<p id="limit" >' . $_GET["page"] . '</p>';
                 echo '<a href="categories.php?page=' . $pageup . '">NEXT</a>';
             }
             ?>
