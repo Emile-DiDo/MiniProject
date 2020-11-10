@@ -31,15 +31,7 @@ if (isset($_GET["id"])) {
         <br>
         <label for="">Category</label>
         <input type="text" id='category'>
-        <br>
-
-
-        <?php
-        if (isset($_GET["id"])) {
-            echo '<input type="submit" name="modify" value="Modify the movie">';
-        } else {
-            echo '<input type="submit" name="add" value="Add a new movie">';
-        }
+        <input type="submit" value='Append the movie' name='submit'>
 
         ?>
 
