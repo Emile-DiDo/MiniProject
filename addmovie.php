@@ -1,8 +1,6 @@
 <?php
 if (isset($_GET["id"])) {
     echo "good";
-} else {
-    echo "bad";
 }
 ?>
 
@@ -16,7 +14,7 @@ if (isset($_GET["id"])) {
 </head>
 
 <body>
-    <h1>ADD MOVIE</h1>
+    <h1>ADD OR MODIFY MOVIE</h1>
     <br>
     <form action="" method="post">
         <label>Title</label>
@@ -33,8 +31,17 @@ if (isset($_GET["id"])) {
         <br>
         <label for="">Category</label>
         <input type="text" id='category'>
-        <input type="submit">Append the movie
+        <br>
 
+
+        <?php
+        if (isset($_GET["id"])) {
+            echo '<input type="submit" name="modify" value="Modify the movie">';
+        } else {
+            echo '<input type="submit" name="add" value="Add a new movie">';
+        }
+
+        ?>
 
     </form>
 
