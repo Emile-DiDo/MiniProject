@@ -35,6 +35,21 @@ if (isset($_SESSION["username"])) {
         <div id="ordered">
 
         </div>
+        <footer>
+            <?php
+            $pageup = intval($_GET["page"] + 1);
+            $pagedown = intval($_GET["page"]) - 1;
+            if ($_GET["page"] == 1) {
+                echo '<p id="limit" value="' . $_GET["page"] . '">Page' . $_GET["page"] . '</p>';
+                echo '<a href="categories.php?page=' . $pageup  . '">NEXT</a>';
+                echo "<br>";
+            } else {
+                echo '<a href="categories.php?page=' .  $pagedown . '">Previous</a>';
+                echo '<p id="limit" value="' . $_GET["page"] . '">Page' . $_GET["page"] . '</p>';
+                echo '<a href="categories.php?page=' . $pageup . '">NEXT</a>';
+            }
+            ?>
+        </footer>
     </header>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="scripts/ordercat.js"></script>
