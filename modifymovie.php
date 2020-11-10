@@ -2,7 +2,7 @@
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $conn = mysqli_connect('localhost', 'root', '', 'miniproject', 3307);
+    $conn = mysqli_connect('localhost', 'root', '', 'miniproject');
     $query = "SELECT * , name FROM movies JOIN categories ON categories.id=movies.category_id where movies.id = $id";
     $result = mysqli_query($conn, $query);
     $db_record = mysqli_fetch_assoc($result);
@@ -15,11 +15,23 @@ if (isset($_POST['modify'])) {
     $release_year = $_POST['year'];
     $description = $_POST['description'];
     $posterpath = $_POST['poster'];
-    $moviepath = $_post['moviepath'];
+    $moviepath = $_POST['moviepath'];
     $category = $_POST['category'];
-    if (!empty($title) && (!empty($release_year)) && (!empty($description)) && (!empty($posterpath)) && (!empty($moviepath)) && (!empty($category))) {
+    echo $title;
+    echo '<br>';
+    echo $release_year;
+    echo '<br>';
+    echo $description;
+    echo '<br>';
+    echo $posterpath;
+    echo '<br>';
+    echo $moviepath;
+    echo '<br>';
+    echo $category;
+
+    if ((!empty($title)) && (!empty($release_year)) && (!empty($description)) && (!empty($posterpath)) && (!empty($moviepath)) && (!empty($category))) {
         echo "inside";
-        $conn = mysqli_connect('localhost', 'root', '', 'miniproject', 3307);
+        $conn = mysqli_connect('localhost', 'root', '', 'miniproject');
 
         $query = "UPDATE movies SET title = '$title',releaseYear = $release_year, description ='$description',
         poster = '$posterpath', category_id =(SELECT category_id FROM movies where movies.id= $id),
