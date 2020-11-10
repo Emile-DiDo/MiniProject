@@ -63,13 +63,13 @@ $(function () {
 
         }).done(function(result) {
             
-                $('.text').append('<p>Succsessfully added</p>');
+                $('.text').append(result);
                 console.log('SUCCESS : ' + result);
             
 
         }).fail(function (result) {
             console.log('AJAX ERROR:' + result);
-            $('.text').append('<p>Something went wrong</p>');
+            $('.text').append(result);
         });
     });
 })
