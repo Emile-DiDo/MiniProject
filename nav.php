@@ -13,6 +13,10 @@ if (isset($_POST['addmovie'])) {
 
     header("Location: addmovie.php");
 }
+if (isset($_POST['modifycat'])) {
+
+    header("Location: modifycat.php");
+}
 
 
 
@@ -33,15 +37,21 @@ if (isset($_POST['addmovie'])) {
         <ul>
 
             <li>
-                <a href="home.php" class="box">HOME </a>
+                <a href="main.php" class="box">HOME </a>
                 <a href="categories.php" class="box">CATEGORIES </a>
                 <!--<a href="insert.php" class='not_visible'>ADD_MOVIES </a> -->
                 <form action="" method="post">
-                    <input type="submit" name='addmovie' value='ADD MOVIES'> <?php
+                    <input type="submit" name='addmovie' value='ADD MOVIES' <?php
 
-                                                                                if (!$admin) {
-                                                                                    echo 'disabled =disabled';
-                                                                                }  ?>
+                                                                            if (!$admin) {
+                                                                                echo 'disabled =disabled';
+                                                                            }  ?>>
+
+                    <input type="submit" name='modifycat' value='MODIFY CATEGORIES' <?php
+
+                                                                                    if (!$admin) {
+                                                                                        echo 'disabled =disabled';
+                                                                                    }  ?>>
                 </form>
 
             </li>
