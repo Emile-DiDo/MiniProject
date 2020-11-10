@@ -38,7 +38,7 @@ if (isset($_POST['modifycat'])) {
 
             <li>
                 <a href="main.php" class="box">HOME </a>
-                <a href="categories.php" class="box">CATEGORIES </a>
+                <a href="categories.php?page=1" class="box">CATEGORIES </a>
                 <!--<a href="insert.php" class='not_visible'>ADD_MOVIES </a> -->
                 <form action="" method="post">
                     <input type="submit" name='addmovie' value='ADD MOVIES' <?php
