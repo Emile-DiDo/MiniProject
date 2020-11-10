@@ -33,7 +33,7 @@ if (isset($_POST['addmovie'])) {
         <ul>
 
             <li>
-                <a href="#home.php" class="box">HOME </a>
+                <a href="home.php" class="box">HOME </a>
                 <a href="categories.php" class="box">CATEGORIES </a>
                 <!--<a href="insert.php" class='not_visible'>ADD_MOVIES </a> -->
                 <form action="" method="post">
