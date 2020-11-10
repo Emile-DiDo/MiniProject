@@ -34,3 +34,7 @@ img {
 #three {
   padding-left: 30px;
 }
+footer {
+  display: flex;
+  justify-content: center;
+}
