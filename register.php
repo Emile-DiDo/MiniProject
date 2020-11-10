@@ -95,38 +95,37 @@ if ($conn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .alert {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/logister.css">
 </head>
 
 <body>
-    <h1>REGISTER NEW ACCOUNT</h1>
-    <h2 class="alert"><?= $error ?></h2>
-    <form action="" method="post">
-        <input type="text" name="firstName" value="<?= $fname ?>" placeholder="Firstname">
-        <p><?= $error1 ?></p>
-        <br>
-        <input type="text" name="lastName" value="<?= $lname ?>" placeholder="Lastname">
-        <p><?= $error2 ?></p>
-        <br>
-        <input type="email" name="email" value="<?= $email ?>" placeholder="E-Mail Address">
-        <p><?= $error3 ?></p>
-        <br>
-        <input type="password" name="pass" value="<?= $pass ?>" placeholder="Password">
-        <p><?= $error4 ?></p>
-        <br>
-        <input type="password" name="passCheck" value="<?= $passCheck ?>" placeholder="Repeat Password">
-        <p><?= $error5 ?></p>
-        <br>
-        <input type="submit" name="login" value="REGISTER">
-    </form>
-    <br><br>
-    <form action="login.php" method="post">
-        <input type="submit" value="Login">
-    </form>
+    <h3> </h3>
+    <div class="box">
+        <h1>REGISTER NEW ACCOUNT</h1>
+        <h2 class="alert"><?= $error ?></h2>
+        <form action="" method="post">
+            <input type="text" name="firstName" value="<?= $fname ?>" placeholder="Firstname">
+            <p><?= $error1 ?></p>
+
+            <input type="text" name="lastName" value="<?= $lname ?>" placeholder="Lastname">
+            <p><?= $error2 ?></p>
+
+            <input type="email" name="email" value="<?= $email ?>" placeholder="E-Mail Address">
+            <p><?= $error3 ?></p>
+
+            <input type="password" name="pass" value="<?= $pass ?>" placeholder="Password">
+            <p><?= $error4 ?></p>
+
+            <input type="password" name="passCheck" value="<?= $passCheck ?>" placeholder="Repeat Password">
+            <p><?= $error5 ?></p>
+
+            <input type="submit" name="login" value="REGISTER">
+        </form>
+        <br><br>
+        <form action="login.php" method="post">
+            <input type="submit" value="Login">
+        </form>
+    </div>
 </body>
 
 </html>
