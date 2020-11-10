@@ -18,7 +18,7 @@ if (isset($_GET["id"])) {
     <br>
     <form action="" method="post">
         <label>Title</label>
-        <input type="text">
+        <input type="text" placeholder="<?= $title ?>">
         <br>
         <label>Release Year</label>
         <input type="text">
