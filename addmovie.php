@@ -33,7 +33,7 @@ if (isset($_GET["id"])) {
         <br>
         <label for="">Category</label>
         <input type="text" id='category'>
-        <input type="submit">Append the movie
+        <input type="submit" value='Append the movie' name='submit'>
 
 
     </form>
